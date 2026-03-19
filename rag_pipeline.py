@@ -44,7 +44,7 @@ Answer clearly:
         contents=prompt
     )
 
-    return response.text
+    return response.text, context
     
 while True:
     query = input("\nAsk your question (or type 'exit'): ")
