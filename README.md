@@ -8,7 +8,7 @@ The system retrieves relevant information from a curated knowledge base (built f
 
 The primary goal is to ensure factual correctness while minimizing hallucination by grounding responses strictly in retrieved data.
 
----
+
 
 ## Features
 
@@ -23,9 +23,11 @@ The primary goal is to ensure factual correctness while minimizing hallucination
 - Context-grounded answer generation
 - Explainability through retrieved context display
 
----
+
 
 ## Project Structure
+
+```
 bank-loan-rag-assistant/
 │
 ├── data/
@@ -38,15 +40,15 @@ bank-loan-rag-assistant/
 ├── chunks.npy 
 │
 └── README.md
+```
 
----
 
 ## Project Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/VaidehiHattikar/bank-loan-rag-assistant.git
 cd bank-loan-rag-assistant
 ```
 
@@ -68,9 +70,11 @@ This step creates embeddings and builds the FAISS index.
 ```bash
 python preprocess.py
 ```
-Outputs:
-'faiss_index.index'
-'chunks.npy'
+**Outputs:**
+
+  `faiss_index.index`
+
+  `chunks.npy`
 
 ### 5. Run the assistant
 
@@ -83,7 +87,7 @@ python rag_pipeline.py
 - Explain Maha Super Flexi Housing Loan
 - What subsidy is available under PMAY?
 
----
+
 
 ## How It Works
 
@@ -94,7 +98,7 @@ python rag_pipeline.py
 5. LLM generates answer strictly based on context
 This ensures factual accuracy and reduces hallucination.
 
----
+
 
 ## Architectural Decisions
 
@@ -104,7 +108,8 @@ A Retrieval-Augmented Generation approach was chosen to ensure responses are gro
 
 ### 2. Embedding Model
 
-**Model:** 'all-MiniLM-L6-v2'
+**Model:** `all-MiniLM-L6-v2`
+
 **Reason:**
 - Lightweight and fast
 - Good semantic similarity performance
@@ -113,6 +118,7 @@ A Retrieval-Augmented Generation approach was chosen to ensure responses are gro
 ### 3. Vector Store
 
 **Tool:** FAISS
+
 **Reason:**
 - Efficient similarity search
 - Lightweight and easy to integrate
@@ -120,7 +126,8 @@ A Retrieval-Augmented Generation approach was chosen to ensure responses are gro
 
 ### 4. LLM Selection
 
-**Model:** Google Gemini (via google-genai)
+**Model:** Google Gemini `(via google-genai)`
+
 **Reason:**
 - Free-tier availability
 - Strong text generation capabilities
@@ -137,11 +144,11 @@ Due to dynamic rendering of website, a hybrid approach of extraction + manual st
 
 ### 6. Chunking Strategy
 
-- Data split using logical separators (===)
+- Data split using logical separators `(======)`
 - Each chunk represents a meaningful section
 - Improves retrieval accuracy
 
----
+
 
 ## Challenges Faced
 
@@ -158,17 +165,17 @@ Due to dynamic rendering of website, a hybrid approach of extraction + manual st
 ### 3. Encoding Issues
 
 - Faced UTF-8 decoding errors
-- Solution: Used alternate encoding '(latin-1)' and error handling
+- Solution: Used alternate encoding `(latin-1)` and error handling
 
 ### 4. Model API Issues
 
 - Faced deprecation of older Gemini SDK
 - Model name mismatches caused errors
 Solution:
-- Migrated to google-genai
+- Migrated to `google-genai`
 - Validated available models manually from [ai.google.dev/gemini-api](https://ai.google.dev/gemini-api/docs/models)
 
----
+
 
 ## Potential Improvements
 
@@ -186,16 +193,17 @@ Solution:
 
 - Integrate conversation memory for multi-turn queries
 
----
+
 
 ## Demo
 
 (Add your video link here)
 
----
+
 
 ## Conclusion
 
-This project demonstrates an end-to-end implementation of a RAG-based AI system capable of delivering accurate, context-driven responses using real-world data.
+This project demonstrates a complete implementation of a RAG-based AI system using real-world financial data. It effectively combines semantic search and LLM capabilities to provide accurate, context-driven responses.
 
----
+The system is scalable, modular, and can be extended into a production-level AI assistant.
+
