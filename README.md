@@ -197,7 +197,7 @@ Solution:
 
 ## Demo
 
-(Add your video link here)
+[Demo Video for Loan Assistant](https://drive.google.com/file/d/19gzv8uqkMsvcd9xmF1gN9lrmLR-cqNUU/view?usp=sharing).
 
 
 
